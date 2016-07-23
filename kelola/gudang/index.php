@@ -1,38 +1,38 @@
 <?php
-	error_reporting(E_ALL & ~E_NOTICE);
-	session_start();
-	include '../../tampilan/header_footer/index.php';
-	include '../../fungsi/gudang/index.php';
-	include '../../koneksi/index.php';
+error_reporting(E_ALL & ~E_NOTICE);
+session_start();
+include '../../tampilan/header_footer/index.php';
+include '../../fungsi/gudang/index.php';
+include '../../koneksi/index.php';
 
-	if (isset($_POST['simpan'])) {
-		TambahDataGudang();
-		if ($_SESSION['status_operasi_gudang'] == "berhasil_menyimpan") {
-			?><body onload="BerhasilMenyimpan()"></body><?php
-		} else {
-			?><body onload="GagalMenyimpan()"></body><?php
-		}
+if (isset($_POST['simpan'])) {
+	TambahDataGudang();
+	if ($_SESSION['status_operasi_gudang'] == "berhasil_menyimpan") {
+		?><body onload="BerhasilMenyimpan()"></body><?php
+	} else {
+		?><body onload="GagalMenyimpan()"></body><?php
 	}
+}
 
-	if (isset($_POST['perbaharui'])) {
-		PerbaharuiDataGudang();
-		if ($_SESSION['status_operasi_gudang'] == "berhasil_memperbaharui") {
-			?><body onload="BerhasilMemperbaharui()"></body><?php
-		} else {
-			?><body onload="GagalMemperbaharui()"></body><?php
-		}
+if (isset($_POST['perbaharui'])) {
+	PerbaharuiDataGudang();
+	if ($_SESSION['status_operasi_gudang'] == "berhasil_memperbaharui") {
+		?><body onload="BerhasilMemperbaharui()"></body><?php
+	} else {
+		?><body onload="GagalMemperbaharui()"></body><?php
 	}
+}
 
-	if (isset($_GET['id'])) {
-		HapusDataGudang();
-		if ($_SESSION['status_operasi_gudang'] == "berhasil_menghapus") {
-			?><body onload="BerhasilMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../gudang/"><?php
-		} else {
-			?><body onload="GagalMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../gudang/"><?php
-		}
+if (isset($_GET['id'])) {
+	HapusDataGudang();
+	if ($_SESSION['status_operasi_gudang'] == "berhasil_menghapus") {
+		?><body onload="BerhasilMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../gudang/"><?php
+	} else {
+		?><body onload="GagalMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../gudang/"><?php
 	}
+}
 
-	Headers();
+Headers();
 ?>
 	<title>Gudang</title>
 
@@ -81,7 +81,7 @@
 												</center>
 											</td>
 										</tr>
-									<?php }?>
+									<?php } $stmt->close(); ?>
 								</tbody>
 							</table>
 						</div>

@@ -18,10 +18,18 @@ Headers();
 							<br>
 						</div>
 						<div class="box-body">
-							<form method="post" action="" enctype="multipart/form-data">
+							<form method="post" action="../bahanbaku/" enctype="multipart/form-data">
 					        	<!-- /.box-header -->
 					        	<div class="box-body">
 				            		<div class="col-md-6">
+					              		<div class="col-md-12">
+					              			<div class="form-group">
+					              				<fieldset>
+					              					<legend>Kode Bahan Baku</legend>
+					              				</fieldset>
+												<input class="form-control" id="kode" type="text" name="kode" placeholder="Masukkan Kode Bahan Baku ...">
+					              			</div>
+					              		</div>
 					              		<div class="col-md-12">
 					              			<div class="form-group">
 					              				<fieldset>
@@ -30,6 +38,16 @@ Headers();
 												<input class="form-control" id="nama" type="text" name="nama" placeholder="Masukkan Nama Bahan Baku ..." required>
 					              			</div>
 					              		</div>
+					              		<div class="col-md-12">
+					              			<div class="form-group">
+					              				<fieldset>
+					              					<legend>Quantity (Stok)</legend>
+					              				</fieldset>
+												<input class="form-control" id="stok" type="number" name="stok" placeholder="Quantity ..." min="0">
+					              			</div>
+					              		</div>
+				            		</div>
+				            		<div class="col-md-6">
 					              		<div class="col-md-12">
 					              			<div class="form-group">
 					              				<fieldset>
@@ -44,14 +62,6 @@ Headers();
 					              					<legend>Harga Jual</legend>
 					              				</fieldset>
 												<input class="form-control" id="harga_jual" type="number" name="harga_jual" placeholder="Harga Jual Rp. 0" min="0">
-					              			</div>
-					              		</div>
-					              		<div class="col-md-12">
-					              			<div class="form-group">
-					              				<fieldset>
-					              					<legend>Quantity (Stok)</legend>
-					              				</fieldset>
-												<input class="form-control" id="stok" type="number" name="stok" placeholder="Quantity ..." min="0">
 					              			</div>
 					              		</div>
 				            		</div>

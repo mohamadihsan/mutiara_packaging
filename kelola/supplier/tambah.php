@@ -18,7 +18,7 @@ Headers();
 							<br>
 						</div>
 						<div class="box-body">
-							<form method="post" action="" enctype="multipart/form-data">
+							<form method="post" action="../supplier/" enctype="multipart/form-data">
 					        	<!-- /.box-header -->
 					        	<div class="box-body">
 				            		<div class="col-md-6">
@@ -43,7 +43,7 @@ Headers();
 					              				<fieldset>
 					              					<legend>Fax</legend>
 					              				</fieldset>
-												<input class="form-control" id="fax" type="phone" name="fax" placeholder="Masukkan Fax ...">
+												<input class="form-control" id="fax" type="text" name="fax" placeholder="Masukkan Fax ...">
 					              			</div>
 					              		</div>
 				            		</div>
@@ -54,7 +54,7 @@ Headers();
 					              				<fieldset>
 					              					<legend>Website</legend>
 					              				</fieldset>
-												<input class="form-control" id="website" type="phone" name="website" placeholder="Masukkan Alamat Website ...">
+												<input class="form-control" id="website" type="text" name="website" placeholder="Masukkan Alamat Website ...">
 					              			</div>
 					              		</div>
 						              	<div class="col-md-12">
@@ -71,20 +71,6 @@ Headers();
 					              			</fieldset>
 					              			<textarea class="form-control" name="alamat" placeholder="Masukkan alamat .."></textarea>
 					              		</div>
-					              		<div class="col-md-12" hidden="">
-					              			<div class="form-group">
-					              				<fieldset>
-					              					<legend>Jenis</legend>
-					              				</fieldset>
-							                	<select class="form-control select2" style="width: 100%;" name="jenis" required>
-							                		<option value="supplier" selected="selected">Supplier</option>
-							                		<option value="pelanggan">Pelanggan</option>
-							                		<option value="distributor">Distributor</option>
-							                		<option value="ekspedisi">Ekspedisi / Logistik</option>
-							                		<option value="lainnya">Lainnya</option>
-							                	</select>
-							              	</div>
-							            </div>
 				            		</div>
 				            		<div class="col-md-12">
 				            			<div class="col-md-1">

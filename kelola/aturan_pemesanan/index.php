@@ -1,5 +1,36 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE);
+session_start();
 include '../../tampilan/header_footer/index.php';
+include '../../fungsi/aturan_pemesanan/index.php';
+include '../../koneksi/index.php';
+
+if (isset($_POST['simpan'])) {
+	TambahAturanPemesanan();
+	if ($_SESSION['status_operasi_aturan_pemesanan'] == "berhasil_menyimpan") {
+		?><body onload="BerhasilMenyimpan()"></body><?php
+	} else {
+		?><body onload="GagalMenyimpan()"></body><?php
+	}
+}
+
+if (isset($_POST['perbaharui'])) {
+	PerbaharuiAturanPemesanan();
+	if ($_SESSION['status_operasi_aturan_pemesanan'] == "berhasil_memperbaharui") {
+		?><body onload="BerhasilMemperbaharui()"></body><?php
+	} else {
+		?><body onload="GagalMemperbaharui()"></body><?php
+	}
+}
+
+if (isset($_GET['id'])) {
+	HapusAturanPemesanan();
+	if ($_SESSION['status_operasi_aturan_pemesanan'] == "berhasil_menghapus") {
+		?><body onload="BerhasilMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../aturan_pemesanan/"><?php
+	} else {
+		?><body onload="GagalMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../aturan_pemesanan/"><?php
+	}
+}
 
 Headers();
 ?>
@@ -25,25 +56,35 @@ Headers();
 										<th>Nama Bahan Baku</th>
 										<th>Minimal Quantity</th>
 										<th>Maksimal Quantity</th>
-										<th>Waktu Tunggu Pemesanan</th>
+										<th>Waktu Tunggu Pemesanan (hari)</th>
 										<th>Gudang</th>
 										<th width="10%"></th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Pot PP 15gr Gold - Putih</td>
-										<td>10</td>
-										<td>100</td>
-										<td>7 hari</td>
-										<td>Gudang Besar</td>
-										<td>
-											<center>
-												<a href="" title="Edit"><i class="fa fa-edit"> </i></a>___
-												<a href="" title="Hapus"><i class="fa fa-trash"> </i></a>
-											</center>
-										</td>
-									</tr>
+									<?php
+										//Tampilkan Data
+										$sql = "SELECT id, nama, minimal_quantity, maksimal_quantity, waktu_tunggu, lokasi_penyimpanan FROM bahan_baku WHERE minimal_quantity IS NOT NULL OR maksimal_quantity IS NOT NULL AND status_hapus='1'";
+										$stmt = $db->prepare($sql);
+										$stmt->execute();
+
+										$stmt->bind_result($id, $nama, $minimal_quantity, $maksimal_quantity, $waktu_tunggu, $lokasi_penyimpanan);
+
+										while ($stmt->fetch()) {?>
+										<tr>
+											<td><?php echo $nama; ?></td>
+											<td><?php echo $minimal_quantity; ?></td>
+											<td><?php echo $maksimal_quantity; ?></td>
+											<td><?php echo $waktu_tunggu; ?></td>
+											<td><?php echo $lokasi_penyimpanan; ?></td>
+											<td>
+												<center>
+													<a href="" title="Edit"><i class="fa fa-edit"> </i></a>___
+													<a href="index.php?id=<?php echo $id; ?>" title="Hapus"><i class="fa fa-trash"> </i></a>
+												</center>
+											</td>
+										</tr>
+									<?php } $stmt->close();?>
 								</tbody>
 							</table>
 						</div>

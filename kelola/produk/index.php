@@ -1,5 +1,45 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE);
+session_start();
 include '../../tampilan/header_footer/index.php';
+include '../../fungsi/produk/index.php';
+include '../../koneksi/index.php';
+
+if (isset($_POST['simpan'])) {
+	TambahDataProduk();
+	if ($_SESSION['status_operasi_produk'] == "berhasil_menyimpan") {
+		?><body onload="BerhasilMenyimpan()"></body><?php
+	} else {
+		?><body onload="GagalMenyimpan()"></body><?php
+	}
+}
+
+if (isset($_POST['perbaharui'])) {
+	PerbaharuiDataProduk();
+	if ($_SESSION['status_operasi_produk'] == "berhasil_memperbaharui") {
+		?><body onload="BerhasilMemperbaharui()"></body><?php
+	} else {
+		?><body onload="GagalMemperbaharui()"></body><?php
+	}
+}
+
+if (isset($_POST['update_stok'])) {
+	PerbaharuiStokProduk();
+	if ($_SESSION['status_operasi_produk'] == "berhasil_update_stok") {
+		?><body onload="BerhasilMemperbaharui()"></body><?php
+	} else {
+		?><body onload="GagalMemperbaharui()"></body><?php
+	}
+}
+
+if (isset($_GET['id'])) {
+	HapusDataProduk();
+	if ($_SESSION['status_operasi_produk'] == "berhasil_menghapus") {
+		?><body onload="BerhasilMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../produk/"><?php
+	} else {
+		?><body onload="GagalMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../produk/"><?php
+	}
+}
 
 Headers();
 ?>
@@ -25,7 +65,8 @@ Headers();
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th width="45%">Nama</th>
+										<th width="15%">Kode</th>
+										<th width="30%">Nama</th>
 										<th width="20%">Harga Jual</th>
 										<th width="10%">Stok</th>
 										<th width="15%">Bahan Baku</th>
@@ -33,20 +74,31 @@ Headers();
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Pot PP 15gr Gold - Putih</td>
-										<td>Rp 1.900,00</td>
-										<td>71</td>
-										<td>
-											<a href=""><i class="fa fa-search" title="Lihat Detail"></i> Lihat</a>
-										</td>
-										<td>
-											<center>
-												<a href="" title="Edit"><i class="fa fa-edit"> </i></a>___
-												<a href="" title="Hapus"><i class="fa fa-trash"> </i></a>
-											</center>
-										</td>
-									</tr>
+									<?php
+										//Tampilkan Data
+										$sql = "SELECT id, kode, nama, harga_jual, stok FROM produk WHERE status_hapus='1'";
+										$stmt = $db->prepare($sql);
+										$stmt->execute();
+
+										$stmt->bind_result($id, $kode, $nama, $harga_jual, $stok);
+
+										while ($stmt->fetch()) {?>
+										<tr>
+											<td><?php echo $kode; ?></td>
+											<td><?php echo $nama; ?></td>
+											<td><?php echo Rupiah($harga_jual); ?></td>
+											<td><?php echo $stok; ?></td>
+											<td>
+												<a href=""><i class="fa fa-file-text-o" title="Lihat Detail Bahan Baku yang Digunakan"></i> Lihat</a>
+											</td>
+											<td>
+												<center>
+													<a href="" title="Edit"><i class="fa fa-edit"> </i></a>___
+													<a href="index.php?id=<?php echo $id; ?>" title="Hapus"><i class="fa fa-trash"> </i></a>
+												</center>
+											</td>
+										</tr>
+									<?php } $stmt->close();?>	
 								</tbody>
 							</table>
 						</div>

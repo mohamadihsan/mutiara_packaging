@@ -1,5 +1,9 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE);
+session_start();
 include '../../tampilan/header_footer/index.php';
+include '../../fungsi/produk/index.php';
+include '../../koneksi/index.php';
 
 Headers();
 ?>
@@ -18,7 +22,7 @@ Headers();
 							<br>
 						</div>
 						<div class="box-body">
-							<form method="post" action="" enctype="multipart/form-data">
+							<form method="post" action="../produk/" enctype="multipart/form-data">
 					        	<!-- /.box-header -->
 					        	<div class="box-body">
 				            		<div class="col-md-6">
@@ -28,12 +32,19 @@ Headers();
 					              					<legend>Nama Produk</legend>
 					              				</fieldset>
 							                	<select class="form-control select2" style="width: 100%;" name="nama" required>
-							                		<option value="" selected="selected">POT 5GR ACD GOLD (sisa stok : 10)</option>
-							                		<option value="">Pot PP 15gr Gold - Putih  (sisa stok : 10)</option>
-							                		<option value="">POT 5GR ACD HIJAU PERLIZE  (sisa stok : 10)</option>
-							                		<option value="">POT 5GR ACD MUTIARA  (sisa stok : 10)</option>
-							                		<option value="">POT 5GR ACD PINK  (sisa stok : 10)</option>
-							                		<option value="">AIRLESS PLASTIK 100ML  (sisa stok : 10)</option>
+							                		<?php
+														//Tampilkan Data
+														$sql = "SELECT id, nama, stok FROM produk WHERE status_hapus='1'";
+														$stmt = $db->prepare($sql);
+														$stmt->execute();
+
+														$stmt->bind_result($id, $nama, $stok);
+
+														while ($stmt->fetch()) {?>
+							                			<option value="<?php echo $id; ?> ">
+							                				<?php echo $nama." (sisa stok : ".$stok.")"; ?>
+							                			</option>
+							                		<?php } ?>	
 							                	</select>
 							              	</div>
 							            </div>
@@ -61,7 +72,7 @@ Headers();
 				            		</div>
 				            		<div class="col-md-12">
 				            			<div class="col-md-1">
-				            				<button class="btn btn-primary" name="simpan">Simpan</button>
+				            				<button class="btn btn-primary" name="update_stok">Simpan</button>
 				            			</div>
 				            		</div>
 					        	</div>

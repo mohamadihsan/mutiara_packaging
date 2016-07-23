@@ -18,14 +18,14 @@ Headers();
 							<br>
 						</div>
 						<div class="box-body">
-							<form method="post" action="" enctype="multipart/form-data">
+							<form method="post" action="../ekspedisi/" enctype="multipart/form-data">
 					        	<!-- /.box-header -->
 					        	<div class="box-body">
 				            		<div class="col-md-6">
 					              		<div class="col-md-12">
 					              			<div class="form-group">
 					              				<fieldset>
-					              					<legend>Nama</legend>
+					              					<legend>Nama Ekspedisi</legend>
 					              				</fieldset>
 												<input class="form-control" id="nama" type="text" name="nama" placeholder="Masukkan Nama Ekspedisi ..." required>
 					              			</div>

@@ -4,6 +4,7 @@ function Headers() {
 	<!DOCTYPE html>
 	<html>
 	<head>
+		<link rel="icon" href="../../gambar/icon.png">
 	 	<meta charset="utf-8">
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  	<!-- Tell the browser to be responsive to screen width -->
@@ -73,7 +74,7 @@ function Headers() {
 	  		}
 	  	</style>
 	</head>
-	<body class="hold-transition skin-red-light sidebar-mini">
+	<body class="hold-transition skin-green-light sidebar-mini">
 		<div class="wrapper">
 		  	<header class="main-header">
 		    	<!-- Logo -->
@@ -121,7 +122,7 @@ function Headers() {
 					            <span>KONTAK</span>
 					        </a>
 					    </li>
-					    <li class="header">MENU INVENTORI</li>
+					    <li class="header">MANAGEMENT INVENTORI</li>
 					    <li class="treeview">
 					         <a href="#">
 					            <i class="fa fa-cog"></i><span>KONTROL PERSEDIAAN</span>
@@ -129,30 +130,93 @@ function Headers() {
 					         </a>
 					         <ul class="treeview-menu">
 					            <li><a href="../../kelola/bahanbaku/"><i class="fa fa-cubes"></i> Bahan Baku</a></li>
-					            <li><a href="../../kelola/aturan_pemesanan/"><i class="fa fa-reorder"></i> Aturan Pemesanan</a></li>
 					            <li><a href="../../kelola/produk/"><i class="fa fa-cube"></i> Produk</a></li>
-					            <li><a href="../../kelola/aturan_produksi/"><i class="fa fa-reorder"></i> Aturan Produksi Produk</a></li>
+					            <li>
+					            	<a href="../../kelola/aturan_pemesanan/"><i class="fa fa-reorder"></i> Aturan Pemesanan</a>
+					            </li>
 					         </ul>
 				        </li>
 				        <li class="treeview">
 					         <a href="#">
-					            <i class="fa fa-calendar"></i><span>PENJADWALAN</span>
+					            <i class="fa fa-calendar"></i><span>JADWAL</span>
 					            <i class="fa fa-angle-left pull-right"></i>
 					         </a>
 					         <ul class="treeview-menu">
-					            <li><a href="../../kelola/jadwal_pemesanan/"><i class="fa fa-calendar-plus-o"></i> Jadwal Pemesanan</a></li>
+					            <li><a href="../../kelola/jadwal_pemesanan/"><i class="fa fa-calendar-plus-o"></i> 
+					            	Jadwal Pemesanan</a>
+					            </li>
+					         </ul>
+				        </li>
+
+				        <li class="header">MANAGEMENT PEMBELIAN</li>
+				        <li class="treeview">
+					         <a href="#">
+					            <i class="fa fa-file-text"></i><span> PEMBELIAN</span>
+					            <i class="fa fa-angle-left pull-right"></i>
+					         </a>
+					         <ul class="treeview-menu">
+					            <li><a href="../../kelola/pembelian/"><i class="fa fa-money"></i> Beli Bahan Baku</a></li>
+					            <li><a href="../../kelola/bahanbaku_masuk/"><i class="fa fa-cloud-download"></i> Bahan Baku Yang Masuk</a></li>
+					         </ul>
+				        </li>
+				        <li class="treeview">
+					        <a href="../../kelola/supplier/">
+					            <i class="fa fa-institution"></i>
+					            <span>Data Supplier</span>
+					        </a>
+					    </li>
+
+				        <li class="header">PRODUKSI DAN DISTRIBUSI</li>
+					    <li class="treeview">
+					         <a href="#">
+					            <i class="fa fa-cog"></i><span>MANAGEMENT</span>
+					            <i class="fa fa-angle-left pull-right"></i>
+					         </a>
+					         <ul class="treeview-menu">
+					            <li><a href="../../kelola/produksi/"><i class="fa fa-cube"></i> Produksi Produk</a></li>
+					            <li>
+					            	<a href="../../kelola/aturan_produksi/"><i class="fa fa-reorder"></i> 
+					            		Aturan Produksi Produk
+					            	</a>
+					            </li>
 					         </ul>
 				        </li>
 				        <li class="treeview">
 					         <a href="#">
-					            <i class="fa fa-institution"></i><span>MANAGEMEN SUPPLIER</span>
+					            <i class="fa fa-calendar"></i><span>JADWAL</span>
 					            <i class="fa fa-angle-left pull-right"></i>
 					         </a>
 					         <ul class="treeview-menu">
-					            <li><a href="../../kelola/supplier/"><i class="fa fa-institution"></i> Data Supplier</a></li>
-					            <li><a href="../../kelola/detail_supplier/"><i class="fa fa-sticky-note-o"></i> Detail</a></li>
+					            <li>
+					            	<a href="../../kelola/jadwal_produksi/"><i class="fa fa-calendar-plus-o"></i> 
+					            		Jadwal Produksi
+					            	</a>
+					            </li>
+					            <li>
+					            	<a href="../../kelola/jadwal_distribusi/"><i class="fa fa-calendar-plus-o"></i> 
+					            		Jadwal Distribusi
+					            	</a>
+					            </li>
 					         </ul>
 				        </li>
+
+				        <li class="header">SALES</li>
+					    <li class="treeview">
+					         <a href="#">
+					            <i class="fa fa-user"></i><span>MANAGEMENT SALES</span>
+					            <i class="fa fa-angle-left pull-right"></i>
+					         </a>
+					         <ul class="treeview-menu">
+					            <li><a href="../../kelola/costumer/"><i class="fa fa-users"></i> Data Costumer</a></li>
+					            <li>
+					            	<a href="../../kelola/aturan_produksi/"><i class="fa fa-file-text-o"></i> 
+					            		Customer Order 
+					            	</a>
+					            </li>
+					         </ul>
+				        </li>
+				        
+				        <li class="header">LAINNYA</li>
 				        <li class="treeview">
 					         <a href="#">
 					            <i class="fa fa-cogs"></i><span>MANAGEMEN LAINNYA</span>
@@ -161,7 +225,6 @@ function Headers() {
 					         <ul class="treeview-menu">
 					            <li><a href="../../kelola/gudang/"><i class="fa fa-institution"></i> Gudang</a></li>
 					            <li><a href="../../kelola/ekspedisi/"><i class="fa fa-truck"></i> Logistik/Ekspedisi</a></li>
-					            <li><a href="../../kelola/kategori_produk/"><i class="fa fa-cube"></i> Kategori Produk</a></li>
 					         </ul>
 				        </li>
 			   	 	</ul>
@@ -298,6 +361,14 @@ function Footer() {
 					timer: 1500,
 					type: "error",
 					showConfirmButton: false });
+			}
+
+			function MenuBelumTersedia(){
+				swal({
+					title: "",
+					text: "Menu ini belum tersedia.",
+					type: "warning",
+					showConfirmButton: true });
 			}
 		</script>
 	</body>

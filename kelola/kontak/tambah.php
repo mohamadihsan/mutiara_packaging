@@ -92,8 +92,7 @@ Headers();
 					              				</fieldset>
 							                	<select class="form-control select2" style="width: 100%;" name="jenis" required>
 							                		<option value="supplier" selected="selected">Supplier</option>
-							                		<option value="pelanggan">Pelanggan</option>
-							                		<option value="distributor">Distributor</option>
+							                		<option value="costumer">Costumer</option>
 							                		<option value="ekspedisi">Ekspedisi / Logistik</option>
 							                		<option value="gudang">Gudang</option>
 							                		<option value="lainnya">Lainnya</option>
