@@ -3,7 +3,7 @@ include '../../tampilan/header_footer/index.php';
 
 Headers();
 ?>
-	<title>Jadwal Pemesanan</title>
+	<title>Aturan Pemesanan</title>
 
 	<div class="content-wrapper">
 		<!-- Konten -->
@@ -13,33 +13,30 @@ Headers();
 		      		<div class="row">
     					<div class="col-md-12">
 							<fieldset>
-								<legend>Jadwal Pemesanan</legend>
+								<legend>Aturan Pemesanan</legend>
 							</fieldset>
 							<a href="tambah.php">
-								<button class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Jadwal</button>
-							</a>
-							<a href="update_stok.php">
-								<button class="btn btn-success"><i class="fa fa-refresh"></i> Cek BB yang perlu dipesan </button>
+								<button class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Aturan</button>
 							</a>
 							<br><br>
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th width="45%">Nama</th>
-										<th width="20%">Harga Jual</th>
-										<th width="10%">Stok</th>
-										<th width="15%">Bahan Baku</th>
+										<th>Nama Bahan Baku</th>
+										<th>Minimal Quantity</th>
+										<th>Maksimal Quantity</th>
+										<th>Waktu Tunggu Pemesanan</th>
+										<th>Gudang</th>
 										<th width="10%"></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>Pot PP 15gr Gold - Putih</td>
-										<td>Rp 1.900,00</td>
-										<td>71</td>
-										<td>
-											<a href=""><i class="fa fa-search" title="Lihat Detail"></i> Lihat</a>
-										</td>
+										<td>10</td>
+										<td>100</td>
+										<td>7 hari</td>
+										<td>Gudang Besar</td>
 										<td>
 											<center>
 												<a href="" title="Edit"><i class="fa fa-edit"> </i></a>___

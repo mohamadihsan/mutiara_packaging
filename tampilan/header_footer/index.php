@@ -130,6 +130,8 @@ function Headers() {
 					         <ul class="treeview-menu">
 					            <li><a href="../../kelola/bahanbaku/"><i class="fa fa-cubes"></i> Bahan Baku</a></li>
 					            <li><a href="../../kelola/aturan_pemesanan/"><i class="fa fa-reorder"></i> Aturan Pemesanan</a></li>
+					            <li><a href="../../kelola/produk/"><i class="fa fa-cube"></i> Produk</a></li>
+					            <li><a href="../../kelola/aturan_produksi/"><i class="fa fa-reorder"></i> Aturan Produksi Produk</a></li>
 					         </ul>
 				        </li>
 				        <li class="treeview">
@@ -234,6 +236,14 @@ function Footer() {
 		      		"info": true,
 		      		"autoWidth": true
 		    	});
+
+		    	//Datemask dd/mm/yyyy
+    			$("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+
+    			//Date picker
+			    $('#datepicker').datepicker({
+			      autoclose: true
+			    });
 		  	});
 
 			function BerhasilMenyimpan(){
