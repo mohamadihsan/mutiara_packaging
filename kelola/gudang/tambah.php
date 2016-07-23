@@ -18,7 +18,7 @@ Headers();
 							<br>
 						</div>
 						<div class="box-body">
-							<form method="post" action="" enctype="multipart/form-data">
+							<form method="post" action="../gudang/" enctype="multipart/form-data">
 					        	<!-- /.box-header -->
 					        	<div class="box-body">
 				            		<div class="col-md-6">
