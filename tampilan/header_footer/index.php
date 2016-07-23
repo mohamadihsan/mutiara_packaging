@@ -116,12 +116,6 @@ function Headers() {
 					            <span>DASHBOARD</span>
 					        </a>
 					    </li>
-					    <li class="treeview">
-					        <a href="../../kelola/kontak/">
-					            <i class="fa fa-user-plus"></i>
-					            <span>KONTAK</span>
-					        </a>
-					    </li>
 					    <li class="header">MANAGEMENT INVENTORI</li>
 					    <li class="treeview">
 					         <a href="#">
@@ -138,12 +132,15 @@ function Headers() {
 				        </li>
 				        <li class="treeview">
 					         <a href="#">
-					            <i class="fa fa-calendar"></i><span>JADWAL</span>
+					            <i class="fa fa-calendar"></i><span>PENGECEKAN</span>
 					            <i class="fa fa-angle-left pull-right"></i>
 					         </a>
 					         <ul class="treeview-menu">
-					            <li><a href="../../kelola/jadwal_pemesanan/"><i class="fa fa-calendar-plus-o"></i> 
-					            	Jadwal Pemesanan</a>
+					            <li><a href="../../kelola/cek_pemesanan/"><i class="fa fa-calendar-plus-o"></i> 
+					            	Cek Pemesanan</a>
+					            </li>
+					            <li><a href="../../kelola/cek_stok_bb/"><i class="fa fa-calendar-plus-o"></i> 
+					            	Cek Stok Bahan Baku</a>
 					            </li>
 					         </ul>
 				        </li>

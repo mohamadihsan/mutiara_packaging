@@ -61,7 +61,6 @@ Headers();
 					              					<legend>Bahan Baku</legend>
 					              				</fieldset>
 							                	<select class="form-control select2" multiple="multiple" style="width: 100%;" name="nama_bahan_baku[]" placeholder="Bahan Baku">
-							                		<option value="">POT 5GR ACD GOLD</option>
 							                		<?php
 														//Tampilkan Data
 														$sql = "SELECT id, nama FROM bahan_baku WHERE status_hapus='1'";
@@ -74,7 +73,7 @@ Headers();
 							                			<option value="<?php echo $id; ?> ">
 							                				<?php echo $nama; ?>
 							                			</option>
-							                		<?php } ?>	
+							                		<?php } $stmt->close(); ?>	
 							                	</select>
 							              	</div>
 				            			</div>

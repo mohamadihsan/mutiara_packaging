@@ -3,7 +3,7 @@ include '../../tampilan/header_footer/index.php';
 
 Headers();
 ?>
-	<title>Kontak</title>
+	<title>Cek Pemesanan</title>
 
 	<div class="content-wrapper">
 		<!-- Konten -->
@@ -13,36 +13,33 @@ Headers();
 		      		<div class="row">
     					<div class="col-md-12">
 							<fieldset>
-								<legend>Kontak</legend>
+								<legend><i class="fa fa-calendar"></i> Pemesanan Bahan Baku</legend>
 							</fieldset>
-							<a href="tambah.php">
-								<button class="btn btn-primary"><i class="fa fa-user-plus"></i> Tambah Kontak</button>
-							</a>
+							<div class="col-md-12" align="right">
+								<i align="right">Tanggal Hari ini : <b><?php echo Tanggal(date('Y-m-d')); ?></b></i>
+							</div>	
 							<br><br>
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th>Nama</th>
-										<th>No.Telp</th>
-										<th>Email</th>
-										<th>Fax</th>
-										<th>Alamat</th>
-										<th>Website</th>
-										<th>Group Kontak</th>
-										<th></th>
+										<th width="15%">Tanggal Pemesanan</th>
+										<th width="20%">Dari (Supplier)</th>
+										<th width="25%">Dikirim ke</th>
+										<th width="10%">Status</th>
+										<th width="15%">Total Biaya</th>
+										<th width="10%"></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>Supplier Pot Cream</td>
-										<td>085720054204</td>
-										<td>mohamad_ihsan100@yahoo.co.id</td>
-										<td>085720054204</td>
-										<td>Ujung Berung</td>
-										<td>www.pot-cream.com</td>
-										<td>Supplier</td>
+										<td>2 September 2015</td>
+										<td>CV. Dhyan Dhany Plastik</td>
+										<td>Mutiara Packaging (Gudang Besar)</td>
+										<td>Proses</td>
+										<td>Rp. 4.500.000,00</td>
 										<td>
 											<center>
+												<a href=""><i class="fa fa-file-text" title="Lihat Detail Pemesanan"></i> ___</a> 
 												<a href="" title="Edit"><i class="fa fa-edit"> </i></a>___
 												<a href="" title="Hapus"><i class="fa fa-trash"> </i></a>
 											</center>

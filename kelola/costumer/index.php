@@ -2,12 +2,12 @@
 error_reporting(E_ALL & ~E_NOTICE);
 session_start();
 include '../../tampilan/header_footer/index.php';
-include '../../fungsi/supplier/index.php';
+include '../../fungsi/costumer/index.php';
 include '../../koneksi/index.php';
 
 if (isset($_POST['simpan'])) {
-	TambahDataSupplier();
-	if ($_SESSION['status_operasi_supplier'] == "berhasil_menyimpan") {
+	TambahDataCostumer();
+	if ($_SESSION['status_operasi_costumer'] == "berhasil_menyimpan") {
 		?><body onload="BerhasilMenyimpan()"></body><?php
 	} else {
 		?><body onload="GagalMenyimpan()"></body><?php
@@ -15,8 +15,8 @@ if (isset($_POST['simpan'])) {
 }
 
 if (isset($_POST['perbaharui'])) {
-	PerbaharuiDataSupplier();
-	if ($_SESSION['status_operasi_supplier'] == "berhasil_memperbaharui") {
+	PerbaharuiDataCostumer();
+	if ($_SESSION['status_operasi_costumer'] == "berhasil_memperbaharui") {
 		?><body onload="BerhasilMemperbaharui()"></body><?php
 	} else {
 		?><body onload="GagalMemperbaharui()"></body><?php
@@ -24,17 +24,17 @@ if (isset($_POST['perbaharui'])) {
 }
 
 if (isset($_GET['id'])) {
-	HapusDataSupplier();
-	if ($_SESSION['status_operasi_supplier'] == "berhasil_menghapus") {
-		?><body onload="BerhasilMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../supplier/"><?php
+	HapusDataCostumer();
+	if ($_SESSION['status_operasi_costumer'] == "berhasil_menghapus") {
+		?><body onload="BerhasilMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../costumer/"><?php
 	} else {
-		?><body onload="GagalMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../supplier/"><?php
+		?><body onload="GagalMenghapus()"></body><meta http-equiv="refresh" content="1.5;url=../costumer/"><?php
 	}
 }
 
 Headers();
 ?>
-	<title>Supplier</title>
+	<title>Costumer</title>
 
 	<div class="content-wrapper">
 		<!-- Konten -->
@@ -44,10 +44,10 @@ Headers();
 		      		<div class="row">
     					<div class="col-md-12">
 							<fieldset>
-								<legend>Supplier</legend>
+								<legend>Costumer</legend>
 							</fieldset>
 							<a href="tambah.php">
-								<button class="btn btn-success"><i class="fa fa-plus"></i> Tambah Supplier</button>
+								<button class="btn btn-success"><i class="fa fa-user-plus"></i> Tambah Costumer</button>
 							</a>
 							<br><br>
 							<table id="example1" class="table table-bordered table-striped">
@@ -59,14 +59,13 @@ Headers();
 										<th width="20%">Website</th>
 										<th width="20">Email</th>
 										<th>Alamat</th>
-										<th width="10%">Supply ?</th>
 										<th width="10%"></th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php
 										//Tampilkan Data
-										$sql = "SELECT id, nama, no_telp, fax, email, website, alamat FROM supplier WHERE status_hapus='1'";
+										$sql = "SELECT id, nama, no_telp, fax, email, website, alamat FROM costumer WHERE status_hapus='1'";
 										$stmt = $db->prepare($sql);
 										$stmt->execute();
 
@@ -80,11 +79,6 @@ Headers();
 											<td><?php echo $email; ?></td>
 											<td><?php echo $website; ?></td>
 											<td><?php echo $alamat; ?></td>
-											<td>
-												<a href="index.php?id_supplier=<?php echo $id; ?>">
-													<i class="fa fa-file-text-o"></i> Lihat
-												</a>
-											</td>
 											<td>
 												<center>
 													<a href="" title="Edit"><i class="fa fa-edit"> </i></a>___

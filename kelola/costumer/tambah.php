@@ -3,7 +3,7 @@ include '../../tampilan/header_footer/index.php';
 
 Headers();
 ?>
-	<title>Tambah Kontak</title>
+	<title>Tambah Costumer</title>
 
 	<div class="content-wrapper">
 		<!-- Konten -->
@@ -13,35 +13,21 @@ Headers();
 		      		<div class="row">
     					<div class="col-md-12">
 							<fieldset>
-								<legend><i class="fa fa-user-plus"></i> Tambah Kontak</legend>
+								<legend><i class="fa fa-user-plus"></i> Tambah Costumer</legend>
 							</fieldset>
 							<br>
 						</div>
 						<div class="box-body">
-							<form method="post" action="" enctype="multipart/form-data">
+							<form method="post" action="../costumer/" enctype="multipart/form-data">
 					        	<!-- /.box-header -->
 					        	<div class="box-body">
 				            		<div class="col-md-6">
-				              			<!-- /.form-group -->
-				              			<div class="col-md-12">
-					              			<div class="form-group">
-					              				<fieldset>
-					              					<legend>Group Kontak</legend>
-					              				</fieldset>
-					              				<div class="col-md-12">
-					              					<input type="radio" name="group" value="personal" checked=""> <b>Personal</b>
-					              				</div>
-					              				<div class="col-md-12">
-					              					<input type="radio" name="group" value="perusahaan"> <b>Perusahaan</b>
-					              				</div>
-					              			</div>
-					              		</div>
 					              		<div class="col-md-12">
 					              			<div class="form-group">
 					              				<fieldset>
-					              					<legend>Nama</legend>
+					              					<legend>Nama Costumer</legend>
 					              				</fieldset>
-												<input class="form-control" id="nama" type="text" name="nama" placeholder="Masukkan nama ..." required>
+												<input class="form-control" id="nama" type="text" name="nama" placeholder="Masukkan Nama ..." required>
 					              			</div>
 					              		</div>
 						              	<div class="col-md-12">
@@ -57,7 +43,7 @@ Headers();
 					              				<fieldset>
 					              					<legend>Fax</legend>
 					              				</fieldset>
-												<input class="form-control" id="fax" type="phone" name="fax" placeholder="Masukkan No Fax ...">
+												<input class="form-control" id="fax" type="text" name="fax" placeholder="Masukkan Fax ...">
 					              			</div>
 					              		</div>
 				            		</div>
@@ -71,12 +57,6 @@ Headers();
 												<input class="form-control" id="website" type="text" name="website" placeholder="Masukkan Alamat Website ...">
 					              			</div>
 					              		</div>
-					              		<div class="col-md-12">
-					              			<fieldset>
-					              				<legend>Alamat</legend>
-					              			</fieldset>
-					              			<textarea class="form-control" name="alamat" placeholder="Masukkan alamat .."></textarea>
-					              		</div>
 						              	<div class="col-md-12">
 					              			<div class="form-group">
 					              				<fieldset>
@@ -86,19 +66,11 @@ Headers();
 					              			</div>
 					              		</div>
 					              		<div class="col-md-12">
-					              			<div class="form-group">
-					              				<fieldset>
-					              					<legend>Jenis</legend>
-					              				</fieldset>
-							                	<select class="form-control select2" style="width: 100%;" name="jenis" required>
-							                		<option value="supplier" selected="selected">Supplier</option>
-							                		<option value="costumer">Costumer</option>
-							                		<option value="ekspedisi">Ekspedisi / Logistik</option>
-							                		<option value="gudang">Gudang</option>
-							                		<option value="lainnya">Lainnya</option>
-							                	</select>
-							              	</div>
-							            </div>
+					              			<fieldset>
+					              				<legend>Alamat</legend>
+					              			</fieldset>
+					              			<textarea class="form-control" name="alamat" placeholder="Masukkan alamat .."></textarea>
+					              		</div>
 				            		</div>
 				            		<div class="col-md-12">
 				            			<div class="col-md-1">
