@@ -47,7 +47,7 @@ Headers();
 								<legend>Aturan Produksi</legend>
 							</fieldset>
 							<a href="tambah.php">
-								<button class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Aturan</button>
+								<button class="btn btn-success"><i class="fa fa-plus"></i> Tambah Aturan</button>
 							</a>
 							<br><br>
 							<table id="example1" class="table table-bordered table-striped">

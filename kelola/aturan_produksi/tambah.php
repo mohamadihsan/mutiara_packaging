@@ -72,7 +72,7 @@ Headers();
 												<select class="form-control select2" style="width: 100%;" name="lokasi_penyimpanan">
 							                		<?php
 														//Tampilkan Data
-														$sql = "SELECT id, nama FROM gudang WHERE status_hapus='1'";
+														$sql = "SELECT id, nama_gudang FROM gudang WHERE status_hapus='1'";
 														$stmt = $db->prepare($sql);
 														$stmt->execute();
 

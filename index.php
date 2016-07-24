@@ -37,7 +37,7 @@ if (isset($_POST['login'])) {
 	  	<!-- /.login-logo -->
 	  	<div class="login-box-body">
 	    	<p class="login-box-msg">Login</p>
-	    	<form action="" method="post">
+	    	<form action="pengelola/admin/" method="post">
 		      	<div class="form-group has-feedback">
 		        	<input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
 		        	<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -59,7 +59,6 @@ if (isset($_POST['login'])) {
 			</form>
 	    <div class="social-auth-links text-left">
 	    	<a href="kelola/register/" class="text-center">Daftar Akun</a>
-			<a href='pengelola/admin/'><button class='btn btn-default'>Admin</button></a>
 		</div>
 	</div>
 

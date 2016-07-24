@@ -283,8 +283,8 @@ function Headers() {
 					         <ul class="treeview-menu">
 					            <li><a href="../../kelola/costumer/"><i class="fa fa-users"></i> Data Costumer</a></li>
 					            <li>
-					            	<a href="../../kelola/aturan_produksi/"><i class="fa fa-file-text-o"></i> 
-					            		Customer Order 
+					            	<a href="../../kelola/sales/"><i class="fa fa-file-text-o"></i> 
+					            		Costumer Order 
 					            	</a>
 					            </li>
 					         </ul>

@@ -62,7 +62,7 @@ Headers();
 								<tbody>
 									<?php
 										//Tampilkan Data
-										$sql = "SELECT id, nama, no_telp, alamat FROM gudang WHERE status_hapus='1'";
+										$sql = "SELECT id, nama_gudang, no_telp, alamat FROM gudang WHERE status_hapus='1'";
 										$stmt = $db->prepare($sql);
 										$stmt->execute();
 

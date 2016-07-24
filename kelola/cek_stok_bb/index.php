@@ -56,7 +56,7 @@ Headers();
 								<tbody>
 									<?php
 										//Tampilkan Data
-										$sql = "SELECT id, kode, nama, harga_beli, harga_jual, stok FROM bahan_baku WHERE status_hapus='1' AND stok<minimal_quantity";
+										$sql = "SELECT id, kode, nama, harga_beli, harga_jual, stok FROM bahan_baku WHERE status_hapus='1' AND stok<minimal_quantity OR stok=0";
 										$stmt = $db->prepare($sql);
 										$stmt->execute();
 

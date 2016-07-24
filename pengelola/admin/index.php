@@ -21,7 +21,7 @@ Headers();
 							          	<!-- small box -->
 						          		<div class="small-box bg-gray" style="color: #666;">
 						            		<div class="inner">
-						            			<h3>?</h3>
+						            			<h3>0</h3>
 						              			<p><b>STOK BAHAN BAKU HABIS</b></p>
 						            		</div>
 						            		<div class="icon">
@@ -35,7 +35,7 @@ Headers();
 							          	<!-- small box -->
 						          		<div class="small-box bg-gray" style="color: #666;">
 						            		<div class="inner">
-						            			<h3>?</h3>
+						            			<h3>0</h3>
 						              			<p><b>PROSES PEMESANAN</b></p>
 						            		</div>
 						            		<div class="icon">
@@ -49,7 +49,7 @@ Headers();
 							          	<!-- small box -->
 						          		<div class="small-box bg-gray" style="color: #666;">
 						            		<div class="inner">
-						            			<h3>?</h3>
+						            			<h3>0</h3>
 						              			<p><b>PRODUK KOSONG</b></p>
 						            		</div>
 						            		<div class="icon">
@@ -63,7 +63,7 @@ Headers();
 							          	<!-- small box -->
 						          		<div class="small-box bg-gray" style="color: #666;">
 						            		<div class="inner">
-						            			<h3>?</h3>
+						            			<h3>0</h3>
 						              			<p><b>PESANAN DIKIRIM</b></p>
 						            		</div>
 						            		<div class="icon">
