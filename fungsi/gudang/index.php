@@ -10,7 +10,7 @@ function TambahDataGudang() {
 	$alamat = $_POST['alamat'];
 
 	//insert
-	$sql = "INSERT INTO gudang (nama, no_telp, alamat) VALUES(?, ?, ?)";
+	$sql = "INSERT INTO gudang (nama_gudang, no_telp, alamat) VALUES(?, ?, ?)";
 	$stmt = $db->prepare($sql);
 	$stmt->bind_param('sss', $nama, $no_telp, $alamat);
 	if ($stmt->execute()) {
@@ -33,7 +33,7 @@ function PerbaharuiDataGudang() {
 	$id = $_POST['id'];
 
 	//update
-	$sql = "UPDATE gudang SET nama = ?, no_telp = ?, alamat = ? WHERE id = ?";
+	$sql = "UPDATE gudang SET nama_gudang = ?, no_telp = ?, alamat = ? WHERE id = ?";
 	$stmt = $db->prepare($sql);
 	$stmt->bind_param('sssi', $nama, $no_telp, $alamat, $id);
 	if ($stmt->execute()) {

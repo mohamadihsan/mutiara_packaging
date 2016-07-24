@@ -4,7 +4,7 @@ include '../../koneksi/index.php';
 
 Headers();
 ?>
-	<title>Tambah Produk</title>
+	<title>Produksi</title>
 
 	<div class="content-wrapper">
 		<!-- Konten -->
@@ -14,56 +14,24 @@ Headers();
 		      		<div class="row">
     					<div class="col-md-12">
 							<fieldset>
-								<legend><i class="fa fa-cube"></i> Tambah Produk</legend>
+								<legend><i class="fa fa-gavel"></i> Produksi</legend>
 							</fieldset>
 							<br>
 						</div>
 						<div class="box-body">
-							<form method="post" action="../produk/" enctype="multipart/form-data">
+							<form method="post" action="" enctype="multipart/form-data">
 					        	<!-- /.box-header -->
 					        	<div class="box-body">
-				            		<div class="col-md-6">
-					              		<div class="col-md-12">
-					              			<div class="form-group">
-					              				<fieldset>
-					              					<legend>Kode Produk</legend>
-					              				</fieldset>
-												<input class="form-control" id="kode" type="text" name="kode" placeholder="Masukkan Kode Produk ...">
-					              			</div>
-					              		</div>
-					              		<div class="col-md-12">
-					              			<div class="form-group">
-					              				<fieldset>
-					              					<legend>Nama Produk</legend>
-					              				</fieldset>
-												<input class="form-control" id="nama" type="text" name="nama" placeholder="Masukkan Nama Produk ..." required>
-					              			</div>
-					              		</div>
-					              		<div class="col-md-12">
-					              			<div class="form-group">
-					              				<fieldset>
-					              					<legend>Harga Jual</legend>
-					              				</fieldset>
-												<input class="form-control" id="harga_jual" type="number" name="harga_jual" placeholder="Harga Jual Rp. 0" min="0">
-					              			</div>
-					              		</div>
-					              		<div class="col-md-12">
-					              			<div class="form-group">
-					              				<fieldset>
-					              					<legend>Quantity (Stok)</legend>
-					              				</fieldset>
-												<input class="form-control" id="stok" type="number" name="stok" placeholder="Quantity ..." min="0">
-					              			</div>
-					              		</div>
-					              		<div class="col-md-12">
+				            		<div class="col-md-12">
+				            			<div class="col-md-5">
+				            				<fieldset>
+				              					<legend>Produk</legend>
+				              				</fieldset>
 				            				<div class="form-group">
-					              				<fieldset>
-					              					<legend>Bahan Baku</legend>
-					              				</fieldset>
-							                	<select class="form-control select2" multiple="multiple" style="width: 100%;" name="nama_bahan_baku[]" placeholder="Bahan Baku">
+							                	<select class="form-control select" style="width: 100%;" name="nama" placeholder="Bahan Baku">
 							                		<?php
 														//Tampilkan Data
-														$sql = "SELECT id, nama FROM bahan_baku WHERE status_hapus='1'";
+														$sql = "SELECT id, nama FROM produk WHERE status_hapus='1'";
 														$stmt = $db->prepare($sql);
 														$stmt->execute();
 
@@ -73,9 +41,30 @@ Headers();
 							                			<option value="<?php echo $id; ?> ">
 							                				<?php echo $nama; ?>
 							                			</option>
-							                		<?php } $stmt->close(); ?>	
+							                		<?php } $stmt->close(); ?>
 							                	</select>
 							              	</div>
+				            			</div>
+					              		<div class="col-md-2">
+					              			<fieldset>
+				              					<legend>Quantity</legend>
+				              				</fieldset>
+					              			<div class="form-group">
+												<input class="form-control" id="quantity" type="number" name="quantity" placeholder="0" min="0">
+					              			</div>
+					              		</div>
+				            			<div class="col-md-4">
+					              			<fieldset>
+				              					<legend>Tanggal</legend>
+				              				</fieldset>
+				            				<div class="form-group">
+				            					<div class="input-group date">
+								                  	<div class="input-group-addon">
+								                    	<i class="fa fa-calendar"></i>
+								                  	</div>
+								                  	<input type="text" class="form-control pull-right" id="datepicker">
+								                </div>
+				            				</div>
 				            			</div>
 				            		</div>
 				            		<div class="col-md-12">

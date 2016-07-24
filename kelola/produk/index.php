@@ -77,28 +77,61 @@ Headers();
 									<?php
 										//Tampilkan Data
 										$sql = "SELECT id, kode, nama, harga_jual, stok FROM produk WHERE status_hapus='1'";
-										$stmt = $db->prepare($sql);
-										$stmt->execute();
+										$result = mysqli_query($db, $sql);
+										$i=0;
+										while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+											$id[$i] = $row['id'];
+											$kode[$i] = $row['kode'];
+											$nama[$i] = $row['nama'];
+											$harga_jual[$i] = $row['harga_jual'];
+											$stok[$i] = $row['stok'];?>
+											<tr>
+												<td><?php echo $kode[$i]; ?></td>
+												<td><?php echo $nama[$i]; ?></td>
+												<td><?php echo Rupiah($harga_jual[$i]); ?></td>
+												<td><?php echo $stok[$i]; ?></td>
+												<td>
+													<a href="#detail?id_p=<?php echo $id[$i];?>"><i class="fa fa-file-text-o" title="Lihat Detail Bahan Baku yang Digunakan"></i> Lihat
+													</a>
 
-										$stmt->bind_result($id, $kode, $nama, $harga_jual, $stok);
-
-										while ($stmt->fetch()) {?>
-										<tr>
-											<td><?php echo $kode; ?></td>
-											<td><?php echo $nama; ?></td>
-											<td><?php echo Rupiah($harga_jual); ?></td>
-											<td><?php echo $stok; ?></td>
-											<td>
-												<a href=""><i class="fa fa-file-text-o" title="Lihat Detail Bahan Baku yang Digunakan"></i> Lihat</a>
-											</td>
-											<td>
-												<center>
-													<a href="" title="Edit"><i class="fa fa-edit"> </i></a>___
-													<a href="index.php?id=<?php echo $id; ?>" title="Hapus"><i class="fa fa-trash"> </i></a>
-												</center>
-											</td>
-										</tr>
-									<?php } $stmt->close();?>	
+													<div id="detail?id_p=<?php echo $id[$i];?>" class="modalWindow">
+														<div>
+															<div class="modalHeader">
+																<h2><?php echo $nama[$i]; ?></h2>
+																<!-- <a href="#close" title="Close" class="close">X</a> -->
+															</div>
+															<div class="modalContent">
+																<p>Bahan Baku yang digunakan untuk membuat produk ini yaitu:</p>
+																
+																<?php
+																$sql1 = "SELECT bahan_baku.nama FROM bahan_baku, detail_produk, produk WHERE bahan_baku.id=detail_produk.id_bahan_baku AND produk.id=detail_produk.id_produk AND produk.id=$id[$i]";
+																$result1 = mysqli_query($db, $sql1);
+																$j=0;
+																while ($row1 = mysqli_fetch_array($result1, MYSQLI_ASSOC)) {
+																	$nama_bb[$j] = $row1['nama'];?>
+																		<p>
+																			<?php echo "* ".$nama_bb[$j]."<br>"; ?>
+																		</p> <?php
+																	$j++;
+																}?>
+															</div>
+															<div class="modalFooter">
+																<a href="#close" title="Tutup" class="cancel">Tutup</a>
+																<div class="clear"></div>
+															</div>
+														</div>
+													</div>
+												</td>
+												<td>
+													<center>
+														<a href="" title="Edit"><i class="fa fa-edit"> </i></a>___
+														<a href="index.php?id=<?php echo $id; ?>" title="Hapus"><i class="fa fa-trash"> </i></a>
+													</center>
+												</td>
+											</tr>
+											<?php
+											$i++;
+										}?>
 								</tbody>
 							</table>
 						</div>
